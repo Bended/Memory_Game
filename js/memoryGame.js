@@ -64,7 +64,7 @@ function randomizeImages() {
 
 function flip() {
         var img_class = this.getElementsByTagName('img')[0].getAttribute('class');
-        if (((count < 2) && (img_class === "reversed")) === false) {
+        if (((count < 2) && (img_class != "reversed")) === true) {
                count++;
                console.log(count);
                this.getElementsByTagName('img')[0].setAttribute('class', 'show reversed');
@@ -83,16 +83,19 @@ function flip() {
 
                     if (guess1 === guess2) {
                         console.log("match");
-                        document.getElementsByClassName('reversed')[0].setAttribute('class', 'match');
+                        var matched = document.getElementsByClassName('reversed').length;
+                        console.log(matched);
                         document.getElementsByClassName('reversed')[1].setAttribute('class', 'match');
+                        document.getElementsByClassName('reversed')[0].setAttribute('class', 'match');
 
                     } else {
                         console.log("miss");
                         setTimeout(new_attempt, 1000);
                         }
+            count = 0;
         }
         }
-        count = 0;
+
 }
 
 function new_attempt() {
