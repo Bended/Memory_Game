@@ -1,6 +1,7 @@
 
 //https://codepen.io/jamesbarnett/pen/kiGsl?editors=0010
 
+
 var guess1 = "";
 var guess2 = "";
 var count = 0;
