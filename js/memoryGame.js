@@ -1,17 +1,34 @@
 
 var guess1 = "";
 var guess2 = "";
+var guess = 0;
 var count = 0;
 var images = [];
 var setOfImages = [];
 var img_class;
+var att;
+var matched = 0;
 
-for (var i = 0; i < 12; i++) {
-     setOfImages[i] = i+1 + '.jpg';
-}
 
-            new_attempt()
+            var toDisplay = "<ol>";
+                for (var i = 0; i < 12; i++) {
+                toDisplay = toDisplay + "<li>";
+                toDisplay = toDisplay + "<img src = ./images/logo.png>";
+                toDisplay = toDisplay + "</li>";
+                }
+            toDisplay = toDisplay + "</ol>";
+            document.getElementById('container').innerHTML = toDisplay;
+
+
+function newGame() {
+
+            att = parseInt(document.getElementById('att').value);
+
                 //randomize an image into my SetOfImage Array
+            for (var i = 0; i < 12; i++) {
+                 setOfImages[i] = i+1 + '.jpg';
+            }
+
             for (var i = 0; i < 6; i++) {
                 var rand = Math.floor((Math.random(setOfImages.length)));
                 var img = setOfImages[rand];
@@ -23,16 +40,11 @@ for (var i = 0; i < 12; i++) {
             }
               randomizeImages();
 
-
+            for (var i = 0; i < 12; i++) {
+                $("img")[i].src = './images/' + images[i]
+            }
             //organize images on the grid and hide them
-            var toDisplay = "<ol>";
-                for (var i = 0; i < 12; i++) {
-                toDisplay = toDisplay + "<li>";
-                toDisplay = toDisplay + "<img src = './images/" + images[i] + "'/>";
-                toDisplay = toDisplay + "</li>";
-                }
-            toDisplay = toDisplay + "</ol>";
-            document.getElementById('container').innerHTML = toDisplay;
+
 
             for (var i = 0; i < 12; i++){
             $("img")[i].setAttribute('class', 'hide');
@@ -40,7 +52,7 @@ for (var i = 0; i < 12; i++) {
 
             clickable(true);
 
-
+}
 
 
 //randomize Array of the images
@@ -89,12 +101,23 @@ function flip() {
                         console.log(matched);
                         document.getElementsByClassName('reversed')[1].setAttribute('class', 'match');
                         document.getElementsByClassName('reversed')[0].setAttribute('class', 'match');
+                        matched = document.getElementsByClassName('match').length;
+                        if (matched == 12) {
+                            alert('you win');
+                            console.log(matched);
+                            }
                         setTimeout(clickable(false), 1500);
 
                     } else {
                         console.log("miss");
                         setTimeout(new_attempt, 1500);  //img hide after 1s
                         }
+            guess++;
+            console.log(guess);
+            if (guess >= att) {
+            alert('you lose');
+            newGame()
+            }
             count = 0;
         }
         }

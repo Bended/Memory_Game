@@ -27,10 +27,18 @@
 
 <body>
 
-<h1>My Memory Game</h1>
-<div><button class="btn btn-primary" onClick="window.location.reload()">New Game</button></div>
+<div class="container">
+    <div class="row">
+         <div class="col-sm-2><img id="logo" src="./images/logo.png"></div>
+        <div class="col-sm-11"><h1>My Memory Game</h1></div>
 
-<div id = "container"></div>
+
+    </div>
+</div>
+<div><span>Number of attempts : </span><input Id="att" type="number"/>
+<button class="btn btn-primary" onClick="newGame()">New Game</button></div>
+
+<div Id = "container"></div>
 
 <script src="./js/memoryGame.js"></script>
 
