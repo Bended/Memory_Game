@@ -15,6 +15,7 @@ color: white;
 
 #container {
     width : 73%;
+    max-width:650px;
     height : 78%;
     background-color : white;
     display:inline-block;
@@ -55,6 +56,9 @@ img {
   display : inline-block;
 }
 
+img{
+    background-color: green;
+}
 
 .show{
     display: inline-block;
@@ -62,7 +66,6 @@ img {
 
 .hid{
     opacity:0;
-    background-color:pink;
 
 }
 
@@ -72,5 +75,5 @@ img {
 
 .match{
     display: inline-block;
-    border: 3px solid green;
+    border: 2px solid lightgreen;
 }

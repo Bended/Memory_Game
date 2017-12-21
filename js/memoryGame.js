@@ -31,7 +31,7 @@ function newGame() {
 
                 //randomize an image into my SetOfImage Array
             for (var i = 0; i < 12; i++) {
-                 setOfImages[i] = i + 1 + '.jpg';
+                 setOfImages[i] = i + 1 + '.jpeg';
             }
 
             for (var i = 0; i < 6; i++) {
