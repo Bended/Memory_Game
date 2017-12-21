@@ -13,11 +13,16 @@ var matched = 0;
             var toDisplay = "<ol>";
                 for (var i = 0; i < 12; i++) {
                 toDisplay = toDisplay + "<li>";
-                toDisplay = toDisplay + "<img src = ./images/logo.png>";
+                toDisplay = toDisplay + "<img src = https://pbs.twimg.com/profile_images/895560528743084032/PlFUsJBA_400x400.jpg>";
                 toDisplay = toDisplay + "</li>";
                 }
             toDisplay = toDisplay + "</ol>";
             document.getElementById('container').innerHTML = toDisplay;
+
+            for (var i = 0; i < 12; i++) {
+                $("img")[i].addEventListener('click', start);
+            }
+
 
 
 function newGame() {
@@ -26,7 +31,7 @@ function newGame() {
 
                 //randomize an image into my SetOfImage Array
             for (var i = 0; i < 12; i++) {
-                 setOfImages[i] = i+1 + '.jpg';
+                 setOfImages[i] = i + 1 + '.jpg';
             }
 
             for (var i = 0; i < 6; i++) {
@@ -34,9 +39,9 @@ function newGame() {
                 var img = setOfImages[rand];
                 images.push(img);
                 images.push(img);
-
                 //Delete the selected images from the SetOfImages Array
                 setOfImages.splice(rand, 1);
+
             }
               randomizeImages();
 
@@ -152,3 +157,8 @@ function clickable(isClickable) {
 
 
 
+function start() {
+    if (document.getElementById('att').value == "") {
+        alert('Please enter a number of attempts : ');
+        }
+}

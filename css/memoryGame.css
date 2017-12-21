@@ -1,5 +1,7 @@
 body{
 text-align:center;
+background-image: url("../images/background.jpg");
+font-family: 'Risque', cursive;
 }
 
 #logo{
@@ -7,9 +9,13 @@ text-align:center;
     height:auto;
 }
 
+h1, h3{
+color: white;
+}
+
 #container {
-    width : 850px;
-    height : 640px;
+    width : 820px;
+    height : 620px;
     background-color : white;
     display:inline-block;
     padding-top:30px;
@@ -17,8 +23,8 @@ text-align:center;
 }
 
 ul {
-    padding: 0;
-    margin: 0;
+    padding: 0px;
+    margin: 0px;
     }
 
 li {
@@ -48,9 +54,11 @@ img {
     display:none;
 }
 
-.reversed{}
+.reversed{
+
+}
 
 .match{
-    displa: inline-block;
+    display: inline-block;
     border: 3px solid green;
 }
