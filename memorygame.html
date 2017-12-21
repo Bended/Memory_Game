@@ -31,13 +31,53 @@
 <body>
 
 <div class="container">
-     <h1>My Memory Game</h1>
-    </div>
-</div>
+     <h1>My Memory Game</h1></div>
 <div><h3>Number of attempts : </h3><input Id="att" type="number"/>
 <button class="btn btn-primary" onClick="newGame()">New Game</button></div>
 
 <div Id = "container"></div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModalLose" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content Lose-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <h2 class="modal-title">You loose !!!</h2>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- Modal Lose-->
+
+<!-- Modal Win-->
+  <div class="modal fade" id="myModalWin" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content Lose-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <h2 class="modal-title">You WIN !!!</h2>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- Modal Win-->
 
 <script src="./js/memoryGame.js"></script>
 

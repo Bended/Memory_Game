@@ -48,11 +48,11 @@ function newGame() {
             for (var i = 0; i < 12; i++) {
                 $("img")[i].src = './images/' + images[i]
             }
-            //organize images on the grid and hide them
+            //organize images on the grid and hid them
 
 
             for (var i = 0; i < 12; i++){
-            $("img")[i].setAttribute('class', 'hide');
+            $("img")[i].setAttribute('class', 'hid');
             }
 
             clickable(true);
@@ -108,7 +108,7 @@ function flip() {
                         document.getElementsByClassName('reversed')[0].setAttribute('class', 'match');
                         matched = document.getElementsByClassName('match').length;
                         if (matched == 12) {
-                            alert('you win');
+                            $("#myModalWin").modal();;
                             console.log(matched);
                             }
                         setTimeout(clickable(false), 1500);
@@ -120,7 +120,7 @@ function flip() {
             guess++;
             console.log(guess);
             if (guess >= att) {
-            alert('you lose');
+            $("#myModalLose").modal();
             newGame()
             }
             count = 0;
@@ -128,12 +128,12 @@ function flip() {
         }
 
 }
-//reset the class of all 'non-matched' img to 'hide'
+//reset the class of all 'non-matched' img to 'hid'
 function new_attempt() {
     var pic = document.getElementsByTagName('img');
     for (var i = 0; i < images.length; i++) {
         if (pic[i].getAttribute('class') != 'match') {
-                pic[i].setAttribute('class', 'hide');
+                pic[i].setAttribute('class', 'hid');
                 $("li")[i].addEventListener('click', flip);
                 }
             }
