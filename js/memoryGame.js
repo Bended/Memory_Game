@@ -13,7 +13,7 @@ var matched = 0;
             var toDisplay = "<ol>";
                 for (var i = 0; i < 12; i++) {
                 toDisplay = toDisplay + "<li>";
-                toDisplay = toDisplay + "<img src = https://pbs.twimg.com/profile_images/895560528743084032/PlFUsJBA_400x400.jpg>";
+                toDisplay = toDisplay + "<img src = './images/logoITC.jpg'>";
                 toDisplay = toDisplay + "</li>";
                 }
             toDisplay = toDisplay + "</ol>";
@@ -35,11 +35,12 @@ function newGame() {
             }
 
             for (var i = 0; i < 6; i++) {
-                var rand = Math.floor((Math.random(setOfImages.length)));
+                var rand = Math.floor((Math.random() * setOfImages.length));
+                console.log(rand);
                 var img = setOfImages[rand];
                 images.push(img);
                 images.push(img);
-                //Delete the selected images from the SetOfImages Array
+    //Delete the selected images from the SetOfImages Array
                 setOfImages.splice(rand, 1);
 
             }
@@ -116,6 +117,9 @@ function flip() {
                     } else {
                         console.log("miss");
                         setTimeout(new_attempt, 1500);  //img hide after 1s
+                        var left = att - guess;
+                        document.getElementById('left').innerHTML =  ": " + left + " left";
+
                         }
             guess++;
             console.log(guess);
@@ -124,6 +128,7 @@ function flip() {
             newGame()
             }
             count = 0;
+
         }
         }
 

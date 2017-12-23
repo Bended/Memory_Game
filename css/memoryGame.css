@@ -11,6 +11,7 @@ font-family: 'Risque', cursive;
 
 h1, h3{
 color: white;
+display:inline-block;
 }
 
 #container {
@@ -32,6 +33,13 @@ color: white;
      }
  }
 
+#left{
+    color: white;
+    font-size: 20px;
+    margin: 10px;
+    display:inline-block;
+}
+
 ul {
     padding: 0px;
     margin: 0px;
@@ -45,8 +53,8 @@ li {
   outline: solid;
   width: 120px;
   height: 18%;
-  background-image: url('https://pbs.twimg.com/profile_images/895560528743084032/PlFUsJBA_400x400.jpg>');
   text-align :center;
+  background: url("../images/logo.jpg");
 }
 
 img {
