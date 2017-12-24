@@ -109,7 +109,8 @@ function flip() {
                         document.getElementsByClassName('reversed')[0].setAttribute('class', 'match');
                         matched = document.getElementsByClassName('match').length;
                         if (matched == 12) {
-                            $("#myModalWin").modal();;
+                            $("#myModalWin").modal();
+                            document.getElementById('win').innerHTML = "You Win in " + guess + " attempts !!!"
                             console.log(matched);
                             }
                         setTimeout(clickable(false), 1500);
@@ -133,7 +134,7 @@ function flip() {
         }
 
 }
-//reset the class of all 'non-matched' img to 'hid'
+//reset the class of all 'non-matched' img to 'hid' class
 function new_attempt() {
     var pic = document.getElementsByTagName('img');
     for (var i = 0; i < images.length; i++) {
@@ -167,3 +168,4 @@ function start() {
         alert('Please enter a number of attempts : ');
         }
 }
+
